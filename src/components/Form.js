@@ -26,13 +26,13 @@ function Form(props){
             <button onClick={submitHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
-            {/* <div className="select">
+            <div className="select">
                 <select name="todos" className="filter-todo">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                 <option value="uncompleted">Uncompleted</option>
             </select>
-      </div> */}
+      </div>
         </form>
     );
 }
