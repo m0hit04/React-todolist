@@ -3,9 +3,10 @@ import React from "react";
 function Form(props){
     //js code and functions
     function inputTextHandler(event){
-        console.log(event.target.value);
+        // console.log(event.target.value);
         props.setInputText(event.target.value);
     }
+
     function submitHandler(event){
         props.setTodos([
             ...props.todos, 
@@ -20,6 +21,11 @@ function Form(props){
         //the value get updated to empty and hence after submitting input tag shows empty.
         event.preventDefault();
     }
+
+    const statusHandler = (e) => {
+        props.setStatus(e.target.value);
+    }
+
     return (
         <form>
             <input value ={props.input} onChange={inputTextHandler} type="text" className="todo-input" />
@@ -27,7 +33,7 @@ function Form(props){
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
-                <select name="todos" className="filter-todo">
+                <select onChange={statusHandler} name="todos" className="filter-todo">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                 <option value="uncompleted">Uncompleted</option>
